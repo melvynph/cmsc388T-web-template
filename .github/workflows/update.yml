@@ -16,5 +16,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-              cd melvynph.github.io
+              cd  melvynph/melvynph.github.io 
               git pull
