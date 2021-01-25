@@ -1,0 +1,20 @@
+name: update workflow
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+jobs:
+  job_one:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+              cd TestRepo
+              git pull
